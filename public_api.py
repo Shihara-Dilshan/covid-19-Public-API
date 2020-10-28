@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 from csv import writer
 import csv
 
 app = Flask(__name__)
+CORS(app)
 
-
-@app.route("/")
+@app.route("/",methods=["GET"])
 def index():
   with open('./covid_data.csv') as csv_file:
     data = csv.reader(csv_file, delimiter=',')
@@ -16,18 +17,46 @@ def index():
       if not first_line:
         places.append({
           "country": row[0],
-          "totalConfirmed": row[1],
-          "totalDeaths": row[2],
-          "totalRecovered": row[3],
-          "dailyConfirmed": row[4],
-          "dailyDeaths": row[5],
-          "activeCases": row[6],
-          "totalCritical": row[7],
-          "lastUpdated": row[8]
+          "countryCode": row[1],
+          "totalConfirmed": row[2],
+          "totalDeaths": row[3],
+          "totalRecovered": row[4],
+          "dailyConfirmed": row[5],
+          "dailyDeaths": row[6],
+          "activeCases": row[7],
+          "totalCritical": row[8],
+          "lastUpdated": row[9]
         })
       else:
         first_line = False
     return jsonify(places)
+    
+
+
+@app.route("/specific/<country>",methods=["GET"])
+def get_by_country(country):
+  with open('./covid_data.csv') as csv_file:
+    data = csv.reader(csv_file, delimiter=',')
+    first_line = True
+    places = []
+    for row in data:
+      if not first_line and row[1] == country:
+        places.append({
+          "country": row[0],
+          "countryCode": row[1],
+          "totalConfirmed": row[2],
+          "totalDeaths": row[3],
+          "totalRecovered": row[4],
+          "dailyConfirmed": row[5],
+          "dailyDeaths": row[6],
+          "activeCases": row[7],
+          "totalCritical": row[8],
+          "lastUpdated": row[9]
+        })
+      else:
+        first_line = False
+    return jsonify(places)
+
 
 
 

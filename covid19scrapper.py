@@ -16,9 +16,9 @@ if __name__ == '__main__':
 
 with open('covid_data.csv', 'w') as csv_file:
     csv_writer = writer(csv_file)
-    headers = ['country', 'totalConfirmed', 'totalDeaths', 'totalRecovered', 'dailyConfirmed', 'dailyDeaths', 'activeCases', 'totalCritical', 'lastUpdated']
+    headers = ['country', 'countryCode', 'totalConfirmed', 'totalDeaths', 'totalRecovered', 'dailyConfirmed', 'dailyDeaths', 'activeCases', 'totalCritical', 'lastUpdated']
     csv_writer.writerow(headers) 
     for i in data:
-        csv_writer.writerow([ i['country'], i['totalConfirmed'], i['totalDeaths'], i['totalRecovered'], i['dailyConfirmed'], i['dailyDeaths'], i['activeCases'], i['totalCritical'], i['lastUpdated']])
+        csv_writer.writerow([ i['country'], i['countryCode'], i['totalConfirmed'], i['totalDeaths'], i['totalRecovered'], i['dailyConfirmed'], i['dailyDeaths'], i['activeCases'], i['totalCritical'], i['lastUpdated']])
 
 
