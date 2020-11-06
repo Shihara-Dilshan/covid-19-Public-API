@@ -1,1 +1,1 @@
-web: guncorn app:public_api
+web: gunicorn3 app:public_api
