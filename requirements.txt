@@ -11,7 +11,7 @@ Automat==0.8.0
 autopep8==1.5.4
 bcrypt==3.1.7
 beautifulsoup4==4.9.1
-binwalk==2.2.0
+binwalk==2.1.0
 blinker==1.4
 boltons==19.1.0
 Brotli==1.0.7
