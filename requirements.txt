@@ -22,7 +22,6 @@ click-plugins==1.1.1
 colorama==0.4.3
 constantly==15.1.0
 cryptography==2.8
-cupshelpers==1.0
 cycler==0.10.0
 dbus-python==1.2.12
 debtags==2.1
