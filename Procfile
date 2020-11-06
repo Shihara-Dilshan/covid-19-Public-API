@@ -1,1 +1,1 @@
-web: gunicorn3 app:public_api
+web: gunicorn app:public_api
