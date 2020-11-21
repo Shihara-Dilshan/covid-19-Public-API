@@ -73,9 +73,8 @@ def get_country_codes():
     country_codes.append({"country_codes": places})
     return jsonify(country_codes)
 
-
 @app.route("/countries",methods=["GET"])
-def index():
+def get_countries():
   with open('./covid_data.csv') as csv_file:
     data = csv.reader(csv_file, delimiter=',')
     first_line = True
