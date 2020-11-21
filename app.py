@@ -63,14 +63,15 @@ def get_country_codes():
     data = csv.reader(csv_file, delimiter=',')
     first_line = True
     places = []
+    country_codes = []
     for row in data:
       if not first_line:
-        places.append({
-          "countryCode": row[1]
-        })
+        places.append(row[1])
       else:
         first_line = False
-    return jsonify(places)
+        
+    country_codes.append({"country_codes": places})
+    return jsonify(country_codes)
 
 
 
