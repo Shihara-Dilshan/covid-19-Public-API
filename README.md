@@ -1,45 +1,41 @@
-## NoobStack ![visitors](https://visitor-badge.glitch.me/badge?page_id=noobstack.visitor-badge)<br />
-Educational platform built with MERN Stack.
+## Public Covid Data ![visitors](https://visitor-badge.glitch.me/badge?page_id=coviddataapi.visitor-badge)<br />
+Public Rest API to provide covid-19 data. Using web scraping.
 
 ## Install
 
 First, clone the repo via git:
 
 ```bash
-git clone https://github.com/Shihara-Dilshan/NoobStack-MERN.git
+git clone https://github.com/Shihara-Dilshan/covid-19-webScrapper-with-flask-API.git
 ```
-Project contains two different folders.
-1.Font-end(contains React files realated to Font-End)
-2.Back-end(contains Node/Express files realated to Back-End)
+All the requirements are located in the requirements.txt file.
 
-And then install the dependencies with NPM.
+Install the dependencies with PIP or PIP3.
+
+pip3
+```bash
+$ pip3 install -r requirements.txt
+```
+
+pip
+```bash
+$ pip install -r requirements.txt
+```
+
+## Update the CSV file using web scraping
 
 ```bash
-$ cd font-end
-$ npm install
-
-$ cd back-end
-$ npm install
+$ python3 covid19scrapper.py
 ```
 
-## Starting Development Servers
+## Starting Development Server
 
 ```bash
-$ cd font-end
-$ npm start
+$ python3 app.py
 
-$ cd back-end
-$ npm start
 ```
-This will start React server on port 3000 and Express server on port 5000
+This will start Flask server 
 
-## Packaging for Production
-
-To package apps for the local platform:
-
-```bash
-$ npm build
-```
 
 ## Maintainers
 
@@ -47,4 +43,4 @@ $ npm build
 
 ## License
 
-MIT © NoobStack 2020
+MIT © 
